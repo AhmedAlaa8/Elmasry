@@ -1,7 +1,6 @@
 <?php
 
-
-
+use App\Http\Controllers\AuthControlle;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SparePartsController;
@@ -22,9 +21,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect('admin/');
-});
+})->name('admin.home');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
+    Route::get('/loginPage', [AuthControlle::class, 'loginPage'])->name('loginPage');
+    Route::post('/login', [AuthControlle::class, 'login'])->name('login');
+    Route::get('/logout', [AuthControlle::class, 'logout'])->name('logout');
+});
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
 
     Route::get('/', function () {
         return view('admin.index');

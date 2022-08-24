@@ -8,8 +8,8 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="index3.html" class="nav-link">Home</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
+            <li class="btn btn-outline-danger ml-5">
+                <a href="{{ route('admin.logout') }}" class="text-danger">LOGOUT</a>
             </li>
         </ul>
 
