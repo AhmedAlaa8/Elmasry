@@ -7,8 +7,8 @@
             <div class="col-md-12">
                 @php
                     
-                    $car = $car->image_car;
-                    $images = explode(' ', $car);
+                    $spareparts = $spareparts->image_s;
+                    $images = explode(' ', $spareparts);
                     
                 @endphp
                 @foreach ($images as $image)
@@ -21,8 +21,8 @@
                                     </div>
                                 </div>
 
-                                <img style="width: 200px;height : 150px" src="{{ asset('images/car') . '/' . $image }}"
-                                    alt="photo">
+                                <img style="width: 200px;height : 150px"
+                                    src="{{ asset('images/spareparts') . '/' . $image }}" alt="photo">
 
 
                             </div>

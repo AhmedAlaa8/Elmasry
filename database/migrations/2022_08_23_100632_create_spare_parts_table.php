@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('salary');
             $table->string('image_s');
-            $table->string('detlise');
-            $table->boolean('existing')->default(1);
+            $table->string('detilse');
+            $table->boolean('existing')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123456'),
             'phone' => '12345678912',
             'adress' => ' ',
+            'isadmin' => '1',
         ]);
 
         // \App\Models\User::factory()->create([

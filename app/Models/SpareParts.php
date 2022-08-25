@@ -14,7 +14,7 @@ class SpareParts extends Model
         'name',
         'image_s',
         'salary',
-        'detlise',
+        'detilse',
         'existing',
 
     ];

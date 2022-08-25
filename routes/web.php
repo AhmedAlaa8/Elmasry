@@ -78,8 +78,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/index', [SparePartsController::class, 'index'])->name('index');
         Route::get('/create', [SparePartsController::class, 'create'])->name('create');
         Route::post('/store', [SparePartsController::class, 'store'])->name('store');
-        Route::get('/edit{spare_parts}', [SparePartsController::class, 'edit'])->name('edit');
-        Route::put('/update{spare_parts}', [SparePartsController::class, 'update'])->name('update');
-        Route::delete('/delete{spare_parts}', [SparePartsController::class, 'delete'])->name('delete');
+        Route::get('/show{spareparts}', [SparePartsController::class, 'show'])->name('show');
+        Route::get('/edit{spareparts}', [SparePartsController::class, 'edit'])->name('edit');
+        Route::put('/update{spareparts}', [SparePartsController::class, 'update'])->name('update');
+        Route::delete('/delete{spareparts}', [SparePartsController::class, 'delete'])->name('delete');
     });
 });
