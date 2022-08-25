@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('image_car');
             $table->string('salary');
             $table->string('detilse');
-            $table->boolean('existing')->default(1);
+            $table->boolean('existing')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

@@ -29,6 +29,7 @@ class UserStoreRequest extends FormRequest
             'password' => 'required|min:6|confirmed',
             'phone' => 'required|min:11',
             'adress' => 'nullable',
+            'is_admin' => 'nullable',
         ];
     }
 

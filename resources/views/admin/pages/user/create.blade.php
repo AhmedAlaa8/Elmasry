@@ -59,6 +59,10 @@
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="isadmin" value="1" checked>
+                                <label>وظيفه</label>
+                            </div>
 
 
                         </div>

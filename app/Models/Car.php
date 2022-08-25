@@ -17,5 +17,6 @@ class Car extends Model
         'image_car',
         'detilse',
         'salary',
+        'existing',
     ];
 }

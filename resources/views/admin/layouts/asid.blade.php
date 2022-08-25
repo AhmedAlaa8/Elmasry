@@ -42,137 +42,198 @@
 
 
 
+                @if (request()->route()->getName() == 'admin.user.index' ||
+                    request()->route()->getName() == 'admin.user.create' ||
+                    request()->route()->getName() == 'admin.user.edit')
+                    <li class="nav-item menu-open">
+                    @else
+                    <li class="nav-item ">
+                @endif
 
 
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-user-tie"></i>
-                        <p>
-                            المستخدم
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.user.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اظهار</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.user.create') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اضافه</p>
-                            </a>
-                        </li>
-                    </ul>
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-user-tie"></i>
+                    <p>
+                        المستخدم
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+
+
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.user.index') }}"
+                            @if (request()->route()->getName() == 'admin.user.index') class="nav-link active">
+                            @else
+                            class="nav-link "> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اظهار</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.user.create') }}"
+                            @if (request()->route()->getName() == 'admin.user.create') class="nav-link active">
+                            @else
+                            class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اضافه</p>
+                        </a>
+                    </li>
+                </ul>
                 </li>
 
 
 
 
-
-                <li class="nav-item ">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-car"></i>
-                        <p>
-                            السياره
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.car.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اظهار</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.car.create') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اضافه</p>
-                            </a>
-                        </li>
-                    </ul>
+                @if (request()->route()->getName() == 'admin.car.index' ||
+                    request()->route()->getName() == 'admin.car.create' ||
+                    request()->route()->getName() == 'admin.car.edit')
+                    <li class="nav-item menu-open">
+                    @else
+                    <li class="nav-item ">
+                @endif
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-car"></i>
+                    <p>
+                        السياره
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.car.index') }}"
+                            @if (request()->route()->getName() == 'admin.car.index') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اظهار</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.car.create') }}"
+                            @if (request()->route()->getName() == 'admin.car.create') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اضافه</p>
+                        </a>
+                    </li>
+                </ul>
                 </li>
 
 
 
-                <li class="nav-item ">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-store-alt"></i>
-                        <p>
-                            المخزن
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.store.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اظهار</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.store.create') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اضافه</p>
-                            </a>
-                        </li>
-                    </ul>
+                @if (request()->route()->getName() == 'admin.store.index' ||
+                    request()->route()->getName() == 'admin.store.create' ||
+                    request()->route()->getName() == 'admin.store.edit')
+                    <li class="nav-item menu-open">
+                    @else
+                    <li class="nav-item ">
+                @endif
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-store-alt"></i>
+                    <p>
+                        المخزن
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.store.index') }}"
+                            @if (request()->route()->getName() == 'admin.store.index') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اظهار</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.store.create') }}"
+                            @if (request()->route()->getName() == 'admin.store.create') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اضافه</p>
+                        </a>
+                    </li>
+                </ul>
                 </li>
 
 
 
-                <li class="nav-item ">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-trailer"></i>
-                        <p>
-                            قطع غيار
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.spare_parts.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اظهار</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.spare_parts.create') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اضافه</p>
-                            </a>
-                        </li>
-                    </ul>
+                @if (request()->route()->getName() == 'admin.spare_parts.index' ||
+                    request()->route()->getName() == 'admin.spare_parts.create' ||
+                    request()->route()->getName() == 'admin.spare_parts.edit')
+                    <li class="nav-item menu-open">
+                    @else
+                    <li class="nav-item ">
+                @endif
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-trailer"></i>
+                    <p>
+                        قطع غيار
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.spare_parts.index') }}"
+                            @if (request()->route()->getName() == 'admin.spare_parts.index') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اظهار</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.spare_parts.create') }}"
+                            @if (request()->route()->getName() == 'admin.spare_parts.create') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اضافه</p>
+                        </a>
+                    </li>
+                </ul>
                 </li>
 
 
 
 
-                <li class="nav-item ">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-align-left"></i>
-                        <p>
-                            طلب
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.order.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اظهار</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.order.create') }}" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>اضافه</p>
-                            </a>
-                        </li>
-                    </ul>
+                @if (request()->route()->getName() == 'admin.order.index' ||
+                    request()->route()->getName() == 'admin.order.create' ||
+                    request()->route()->getName() == 'admin.order.edit')
+                    <li class="nav-item menu-open">
+                    @else
+                    <li class="nav-item ">
+                @endif
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-align-left"></i>
+                    <p>
+                        طلب
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.order.index') }}"
+                            @if (request()->route()->getName() == 'admin.order.index') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اظهار</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.order.create') }}"
+                            @if (request()->route()->getName() == 'admin.order.create') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اضافه</p>
+                        </a>
+                    </li>
+                </ul>
                 </li>
             </ul>
         </nav>

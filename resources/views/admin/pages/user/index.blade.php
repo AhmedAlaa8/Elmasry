@@ -27,7 +27,7 @@
                                 <th>البريد الالكتروني</th>
                                 <th>الهاتف</th>
                                 <th>العنوان</th>
-                                {{-- <th>كلمه السر</th> --}}
+                                <th>وظيفه</th>
                                 <th>الضبط</th>
                             </tr>
                         </thead>
@@ -40,6 +40,13 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->adress }}</td>
+                                    <td>
+                                        @if ($user->isadmin == 1)
+                                            <p class="text-primary">ادمن</p>
+                                        @else
+                                            <p class="text-danger">مستخدم</p>
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="{{ route('admin.user.edit', $user->id) }}"
                                             class="btn btn-outline-info m-2">
@@ -69,7 +76,7 @@
                                 <th>البريد الالكتروني</th>
                                 <th>الهاتف</th>
                                 <th>العنوان</th>
-                                {{-- <th>كلمه السر</th> --}}
+                                <th>وظيفه</th>
                                 <th>الضبط</th>
                             </tr>
                         </tfoot>

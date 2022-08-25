@@ -23,7 +23,10 @@ class UserController extends Controller
     }
     public function store(UserStoreRequest $request)
     {
+
+
         User::create([
+            'isadmin' => $request->isadmin ?? "0",
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -45,6 +48,7 @@ class UserController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'adress' => $request->adress,
+            'isadmin' => $request->isadmin ?? "0",
         ]);
         Alert::success('تمت العمليه بنجاح', 'نجاح');
         return redirect(route('admin.user.index'));

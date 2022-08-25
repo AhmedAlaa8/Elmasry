@@ -47,6 +47,12 @@
                                 @enderror
                             </div>
 
+                            <div class="form-check">
+                                <input type="checkbox" name="isadmin" value="1" {{ $user->isadmin ? 'checked' : '' }}
+                                    class="form-check-input">
+
+                                <label class="form-check-label" for="exampleCheck1">وظيفه</label>
+                            </div>
 
 
                         </div>

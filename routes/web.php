@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/index', [CarController::class, 'index'])->name('index');
         Route::get('/create', [CarController::class, 'create'])->name('create');
         Route::post('/store', [CarController::class, 'store'])->name('store');
+        Route::get('/show{car}', [CarController::class, 'show'])->name('show');
         Route::get('/edit{car}', [CarController::class, 'edit'])->name('edit');
         Route::put('/update{car}', [CarController::class, 'update'])->name('update');
         Route::delete('/delete{car}', [CarController::class, 'delete'])->name('delete');
