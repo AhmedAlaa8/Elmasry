@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Order extends Model
+class OrderCar extends Model
 {
-    use HasFactory, SoftDeletes;
-
+    use HasFactory;
     protected $fillable = [
         'name',
         'adress',
@@ -17,15 +15,17 @@ class Order extends Model
         'phone2',
         'salary',
         'user_id',
-        'spare_parts_id',
+        'car_id',
+
     ];
+
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function spare_parts()
+    public function car()
     {
-        return $this->belongsTo(SpareParts::class, 'spare_parts_id');
+        return $this->belongsTo(SpareParts::class, 'car_id');
     }
 }

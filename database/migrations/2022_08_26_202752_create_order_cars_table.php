@@ -13,7 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('order_cars', function (Blueprint $table) {
+
             $table->id();
             $table->string('name');
             $table->string('adress');
@@ -21,13 +22,13 @@ return new class extends Migration
             $table->string('phone2')->nullable();
             $table->string('salary');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('spare_parts_id')->nullable();
+            $table->unsignedBigInteger('car_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
 
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->foreign('spare_parts_id')->references('id')->on('spare_parts')->onDelete('CASCADE');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('CASCADE');
         });
     }
 
@@ -38,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_cars');
     }
 };

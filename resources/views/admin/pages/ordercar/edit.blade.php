@@ -12,13 +12,13 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="post" action="{{ route('admin.order.update', $order->id) }}">
+                    <form method="post" action="{{ route('admin.ordercar.update', $ordercar->id) }}">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">الاسم</label>
-                                <input type="text" value="{{ $order->name }}" class="form-control" id="text"
+                                <input type="text" value="{{ $ordercar->name }}" class="form-control" id="text"
                                     name="name">
 
                                 @error('name')
@@ -29,7 +29,7 @@
 
                             <div class="form-group">
                                 <label for="adress">العنوان</label>
-                                <input type="text" value="{{ $order->adress }}" class="form-control" id="text"
+                                <input type="text" value="{{ $ordercar->adress }}" class="form-control" id="text"
                                     name="adress">
 
                                 @error('adress')
@@ -40,7 +40,7 @@
 
                             <div class="form-group">
                                 <label for="phone">الهاتف</label>
-                                <input type="text" value="{{ $order->phone }}" class="form-control" id="text"
+                                <input type="text" value="{{ $ordercar->phone }}" class="form-control" id="text"
                                     name="phone">
 
                                 @error('phone')
@@ -50,7 +50,7 @@
 
                             <div class="form-group">
                                 <label for="phone2"> هاتف اخر</label>
-                                <input type="text" value="{{ $order->phone2 }}" class="form-control" id="text"
+                                <input type="text" value="{{ $ordercar->phone2 }}" class="form-control" id="text"
                                     name="phone2">
 
                                 @error('phone2')
@@ -61,7 +61,7 @@
 
                             <div class="form-group">
                                 <label for="salary">السعر</label>
-                                <input type="number" value="{{ $order->salary }}" class="form-control" id="text"
+                                <input type="number" value="{{ $ordercar->salary }}" class="form-control" id="text"
                                     name="salary">
 
                                 @error('salary')
@@ -76,7 +76,7 @@
                                     <option value="0"> اختر </option>
                                     @foreach ($users as $user)
                                         <option value="{{ $user->id }}"
-                                            {{ $order->user_id == $user->id ? 'selected' : '' }}> {{ $user->name }}
+                                            {{ $ordercar->user_id == $user->id ? 'selected' : '' }}> {{ $user->name }}
                                         </option>
                                     @endforeach
 
@@ -89,18 +89,17 @@
 
 
                             <div class="form-group">
-                                <label for="usaer_id">قطع الغيار</label>
-                                <select name="spare_parts_id" class="custom-select form-control-border"
-                                    id="exampleSelectBorder">
+                                <label for="car_id">السياره</label>
+                                <select name="car_id" class="custom-select form-control-border" id="exampleSelectBorder">
                                     <option value="0"> اختر </option>
-                                    @foreach ($spareparts as $sparepart)
-                                        <option value="{{ $sparepart->id }}"
-                                            {{ $order->spare_parts_id == $sparepart->id ? 'selected' : '' }}>
-                                            {{ $sparepart->name }}</option>
+                                    @foreach ($cars as $car)
+                                        <option value="{{ $car->id }}"
+                                            {{ $ordercar->car_id == $car->id ? 'selected' : '' }}>
+                                            {{ $car->name }}</option>
                                     @endforeach
 
                                 </select>
-                                @error('spare_parts_id')
+                                @error('car_id')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthControlle;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\OrderCarController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SparePartsController;
 use App\Http\Controllers\StoreController;
@@ -72,6 +73,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/edit{order}', [OrderController::class, 'edit'])->name('edit');
         Route::put('/update{order}', [OrderController::class, 'update'])->name('update');
         Route::delete('/delete{order}', [OrderController::class, 'delete'])->name('delete');
+    });
+    Route::group(['prefix' => 'ordercar', 'as' => 'ordercar.'], function () {
+
+        Route::get('/index', [OrderCarController::class, 'index'])->name('index');
+        Route::get('/create', [OrderCarController::class, 'create'])->name('create');
+        Route::post('/store', [OrderCarController::class, 'store'])->name('store');
+        Route::get('/edit{ordercar}', [OrderCarController::class, 'edit'])->name('edit');
+        Route::put('/update{ordercar}', [OrderCarController::class, 'update'])->name('update');
+        Route::delete('/delete{ordercar}', [OrderCarController::class, 'delete'])->name('delete');
     });
     Route::group(['prefix' => 'spare_parts', 'as' => 'spare_parts.'], function () {
 

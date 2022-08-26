@@ -27,38 +27,38 @@
                                 <th>الهاتف</th>
                                 <th> هاتف اخر</th>
                                 <th> السعر</th>
-                                <th> قطع الغيار</th>
-                                <th>المستخدم</th>
+                                <th> السياره </th>
+                                <th> المستخدم </th>
                                 <th>العنوان</th>
                                 <th>الضبط</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach ($orders as $key => $order)
+                            @foreach ($ordercars as $key => $ordercar)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $order->name }}</td>
-                                    <td>{{ $order->phone }}</td>
-                                    <td>{{ $order->phone2 }}</td>
-                                    <td>{{ $order->salary }}</td>
-                                    <td>{{ $order->spare_parts->name }}</td>
-                                    <td>{{ $order->user->name }}</td>
-                                    <td>{{ $order->adress }}</td>
+                                    <td>{{ $ordercar->name }}</td>
+                                    <td>{{ $ordercar->phone }}</td>
+                                    <td>{{ $ordercar->phone2 }}</td>
+                                    <td>{{ $ordercar->salary }}</td>
+                                    <td>{{ $ordercar->car->name }}</td>
+                                    <td>{{ $ordercar->user->name }}</td>
+                                    <td>{{ $ordercar->adress }}</td>
 
 
                                     <td>
-                                        <a href="{{ route('admin.order.edit', $order->id) }}"
+                                        <a href="{{ route('admin.ordercar.edit', $ordercar->id) }}"
                                             class="btn btn-outline-info m-2">
                                             <i class="fas fa-highlighter"></i>
                                         </a>
 
 
 
-                                        <form action="{{ route('admin.order.delete', $order->id) }}" method="post">
+                                        <form action="{{ route('admin.ordercar.delete', $ordercar->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <input type="hidden" name="id" value="{{ $order->id }}">
+                                            <input type="hidden" name="id" value="{{ $ordercar->id }}">
                                             <button type="submit" class="btn btn-outline-danger ml-2">
                                                 <i class="fas fa-trash"></i>
                                             </button>
@@ -78,8 +78,8 @@
                                 <th>الهاتف</th>
                                 <th> هاتف اخر</th>
                                 <th> السعر</th>
-                                <th> قطع الغيار</th>
-                                <th>المستخدم</th>
+                                <th> السياره </th>
+                                <th> المستخدم </th>
                                 <th>العنوان</th>
                                 <th>الضبط</th>
                             </tr>

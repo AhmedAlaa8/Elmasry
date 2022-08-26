@@ -87,7 +87,8 @@
 
                 @if (request()->route()->getName() == 'admin.car.index' ||
                     request()->route()->getName() == 'admin.car.create' ||
-                    request()->route()->getName() == 'admin.car.edit')
+                    request()->route()->getName() == 'admin.car.edit' ||
+                    request()->route()->getName() == 'admin.car.show')
                     <li class="nav-item menu-open">
                     @else
                     <li class="nav-item ">
@@ -120,6 +121,48 @@
                     </li>
                 </ul>
                 </li>
+
+
+
+
+                @if (request()->route()->getName() == 'admin.spare_parts.index' ||
+                    request()->route()->getName() == 'admin.spare_parts.create' ||
+                    request()->route()->getName() == 'admin.spare_parts.edit' ||
+                    request()->route()->getName() == 'admin.spare_parts.show')
+                    <li class="nav-item menu-open">
+                    @else
+                    <li class="nav-item ">
+                @endif
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-trailer"></i>
+                    <p>
+                        قطع غيار
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.spare_parts.index') }}"
+                            @if (request()->route()->getName() == 'admin.spare_parts.index') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اظهار</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.spare_parts.create') }}"
+                            @if (request()->route()->getName() == 'admin.spare_parts.create') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اضافه</p>
+                        </a>
+                    </li>
+                </ul>
+                </li>
+
+
 
 
 
@@ -161,45 +204,6 @@
 
 
 
-                @if (request()->route()->getName() == 'admin.spare_parts.index' ||
-                    request()->route()->getName() == 'admin.spare_parts.create' ||
-                    request()->route()->getName() == 'admin.spare_parts.edit')
-                    <li class="nav-item menu-open">
-                    @else
-                    <li class="nav-item ">
-                @endif
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-trailer"></i>
-                    <p>
-                        قطع غيار
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.spare_parts.index') }}"
-                            @if (request()->route()->getName() == 'admin.spare_parts.index') class="nav-link active">
-                                @else
-                                class="nav-link"> @endif
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>اظهار</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.spare_parts.create') }}"
-                            @if (request()->route()->getName() == 'admin.spare_parts.create') class="nav-link active">
-                                @else
-                                class="nav-link"> @endif
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>اضافه</p>
-                        </a>
-                    </li>
-                </ul>
-                </li>
-
-
-
-
                 @if (request()->route()->getName() == 'admin.order.index' ||
                     request()->route()->getName() == 'admin.order.create' ||
                     request()->route()->getName() == 'admin.order.edit')
@@ -210,7 +214,7 @@
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-align-left"></i>
                     <p>
-                        طلب
+                        طلب قطع غيار
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
@@ -234,6 +238,46 @@
                         </a>
                     </li>
                 </ul>
+
+
+                </li>
+
+                @if (request()->route()->getName() == 'admin.ordercar.index' ||
+                    request()->route()->getName() == 'admin.ordercar.create' ||
+                    request()->route()->getName() == 'admin.ordercar.edit')
+                    <li class="nav-item menu-open">
+                    @else
+                    <li class="nav-item ">
+                @endif
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-align-left"></i>
+                    <p>
+                        طلب سياره
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.ordercar.index') }}"
+                            @if (request()->route()->getName() == 'admin.ordercar.index') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اظهار</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.ordercar.create') }}"
+                            @if (request()->route()->getName() == 'admin.ordercar.create') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>اضافه</p>
+                        </a>
+                    </li>
+                </ul>
+
+
                 </li>
             </ul>
         </nav>
