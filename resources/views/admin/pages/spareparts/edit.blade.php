@@ -8,7 +8,7 @@
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">تعديل السياره</h3>
+                        <h3 class="card-title">تعديل قطع الغيار</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -52,7 +52,7 @@
 
                             <div class="form-group">
                                 <label for="salary"> السعر</label>
-                                <input type="text" value="{{ $spareparts->salary }}" class="form-control" id="salary"
+                                <input type="number" value="{{ $spareparts->salary }}" class="form-control" id="salary"
                                     name="salary">
                                 @error('salary')
                                     <p class="text-danger">{{ $message }}</p>
