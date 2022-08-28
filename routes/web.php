@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthControlle;
+use App\Http\Controllers\AuthSitController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\OrderCarController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SitController;
 use App\Http\Controllers\SparePartsController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
@@ -21,8 +23,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('admin/');
-})->name('admin.home');
+    return redirect('pages/');
+});
+
+
+Route::group(['prefix' => 'pages', 'as' => 'sit.'], function () {
+
+    Route::get('/loginPage', [AuthSitController::class, 'loginPage'])->name('loginPage');
+    Route::post('/login', [AuthSitController::class, 'login'])->name('login');
+    Route::get('/re', [AuthSitController::class, 'sitre'])->name('re');
+    Route::post('/store', [AuthSitController::class, 'store'])->name('store');
+    Route::get('/logout', [AuthSitController::class, 'logout'])->name('logout');
+});
+
+Route::get('pages', [SitController::class, 'sit'])->name('sit');
+
+
+
+Route::group(['prefix' => 'sitlogin', 'as' => 'sitlogin.', 'middleware' => 'auth1'], function () {
+
+    Route::get('', [SitController::class, 'sitlogin'])->name('');
+});
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
@@ -30,6 +51,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::post('/login', [AuthControlle::class, 'login'])->name('login');
     Route::get('/logout', [AuthControlle::class, 'logout'])->name('logout');
 });
+
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
 

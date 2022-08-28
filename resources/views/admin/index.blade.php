@@ -2,20 +2,32 @@
 
 @section('content')
     <div class="row">
-        <h1>hello Admin</h1>
+
     </div>
 @endsection
 
 
 @section('bread')
     <div class="row mb-2">
-        <div class="col-sm-6">
-            <h1 class="m-0">الصفحة الرئيسية</h1>
+        <div class="col-sm-12">
+            <div class="lockscreen-wrapper">
+                <div class="lockscreen-logo ">
+                    <a href=""><b>Hello </b>Admin</a>
+                </div>
+
+                <div class="lockscreen-name"></div>
+
+
+                <div class="lockscreen-item mt-5">
+
+                    <div style="margin-left: 110px;" class="lockscreen-image">
+                        <img src="{{ asset('adminLTE') }}/dist/img/user1-128x128.jpg" alt="User Image">
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">الرئيسية</li>
-            </ol>
-        </div>
+
     </div>
 @endsection
