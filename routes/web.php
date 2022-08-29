@@ -57,7 +57,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
 
     Route::get('/', function () {
         return view('admin.index');
-    });
+    })->name('home');
 
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
 
