@@ -43,6 +43,7 @@ Route::get('pages', [SitController::class, 'sit'])->name('sit');
 Route::group(['prefix' => 'sitlogin', 'as' => 'sitlogin.', 'middleware' => 'auth'], function () {
 
     Route::get('', [SitController::class, 'sitlogin'])->name('');
+    Route::get('/showcar', [SitController::class, 'showcar'])->name('showcar');
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {

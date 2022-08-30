@@ -23,8 +23,9 @@
     <div class="container pt-5 pb-3">
         <h1 class="display-1 text-primary text-center">02</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
-        @if (request()->route()->getName() == 'sitlogin')
-            <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
+        @if (request()->route()->getName() == 'sitlogin.')
+            <a href="{{ route('sitlogin.showcar') }}" style="margin-left: 41%"
+                class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
         @else
             <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
         @endif
@@ -156,8 +157,9 @@
                     <a class="btn btn-primary px-3" href="">$99.00/Day</a>
                 </div>
             </div>
-            @if (request()->route()->getName() == 'sitlogin')
-                <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
+            @if (request()->route()->getName() == 'sitlogin.')
+                <a href="{{ route('sitlogin.showcar') }}" style="margin-left: 41%"
+                    class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
             @else
                 <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
             @endif
