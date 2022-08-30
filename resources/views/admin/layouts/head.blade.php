@@ -1,3 +1,11 @@
+@php
+session_start();
+if (!isset($_SESSION['isadmin'])) {
+    header('location:/admin/loginPage');
+    die();
+}
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
