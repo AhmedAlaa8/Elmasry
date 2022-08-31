@@ -26,6 +26,6 @@ class OrderCar extends Model
     }
     public function car()
     {
-        return $this->belongsTo(SpareParts::class, 'car_id');
+        return $this->belongsTo(Car::class, 'car_id');
     }
 }

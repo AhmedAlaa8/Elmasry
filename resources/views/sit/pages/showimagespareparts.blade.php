@@ -47,9 +47,8 @@
 
             <div class="col-md-6 text-center text-lg-right">
 
-
-                {{-- <a href="{{ route('sit.logout') }}" class="btn btn-danger rounded"> Log out </a> --}}
-
+                {{-- <a href="{{ route('sit.loginPage') }}" class="btn btn-primary rounded"> Log in </a>
+                <a href="{{ route('sit.re') }}" class="btn btn-secondary rounded">Sing Up</a> --}}
 
                 <div class="d-inline-flex align-items-center ">
 
@@ -73,20 +72,37 @@
         </div>
     </div>
     <!-- Topbar End -->
-
+    @php
+        
+        $spareparts = $spareparts->image_s;
+        
+        $images = explode(' ', $spareparts);
+        
+    @endphp
 
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
 
         @include('sit.layouts.nav')
-        @include('sit.layouts.carousel')
-        @include('sit.layouts.about')
 
-        @include('sit.layouts.car')
-        @include('sit.layouts.spareparts')
-        @include('sit.layouts.tame')
+        <div class="container">
+
+            <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Thumbnail Gallery</h1>
+
+            <hr class="mt-2 mb-5">
 
 
-        @include('sit.layouts.end')
+
+            <div class="row text-center text-lg-start">
+                @foreach ($images as $image)
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="{{ asset('images/spareparts') . '/' . $image }}"
+                                alt="">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
         @include('sit.layouts.footer')

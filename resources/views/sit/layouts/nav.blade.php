@@ -8,9 +8,12 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
             <div class="navbar-nav ml-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
+
+                @if (request()->route()->getName() == 'sitlogin.')
+                    <a href="{{ route('sit.logout') }}" class="nav-item nav-link text-danger">Logout</a>
+                @else
+                @endif
+
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                     <div class="dropdown-menu rounded-0 m-0">
@@ -19,14 +22,7 @@
                         <a href="booking.html" class="dropdown-item">Car Booking</a>
                     </div>
                 </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                        <a href="team.html" class="dropdown-item">The Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+
             </div>
         </div>
     </nav>

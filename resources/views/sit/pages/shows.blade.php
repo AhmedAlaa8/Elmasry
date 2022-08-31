@@ -105,21 +105,21 @@
 
             <div class="container pt-5 pb-3">
                 <div class="row">
-                    @foreach ($cars as $car)
+                    @foreach ($spareparts as $sparepart)
                         @php
-                            $x = explode(' ', $car->image_car);
+                            $x = explode(' ', $sparepart->image_s);
                         @endphp
                         <div class="col-lg-4 col-md-6 mb-2">
                             <div class="rent-item mb-4">
                                 <img class="img-fluid mb-4" style="height: 200px"
-                                    src="{{ asset('images/car/') }}/{{ $x[0] }}" alt="">
+                                    src="{{ asset('images/spareparts/') }}/{{ $x[0] }}" alt="">
                                 <h5> <a class="nav-item nav-link text-info "
-                                        href="{{ route('sitlogin.showimagecar', $car->id) }}">Show image</a></h5>
-                                <h4 class="text-uppercase mb-4">{{ $car->name }}</h4>
+                                        href="{{ route('sitlogin.showimages', $sparepart->id) }}">Show image</a></h5>
+                                <h4 class="text-uppercase mb-4">{{ $sparepart->name }}</h4>
                                 <div class="d-flex justify-content-center mb-4">
                                     <div class="px-2">
                                         <i class="fa fa-car text-primary mr-1"></i>
-                                        <span>{{ $car->type }}</span>
+                                        <span></span>
                                     </div>
                                     <div class="px-2 border-left border-right">
                                         <i class="fa fa-cogs text-primary mr-1"></i>
@@ -129,9 +129,15 @@
                                         <i class="fa fa-road text-primary mr-1"></i>
                                         <span></span>
                                     </div>
+
+                                </div>
+                                <div>
+
+                                    <p lass="nav-item nav-link text-primary">{{ $sparepart->detilse }}</p>
+
                                 </div>
                                 <a class="btn btn-primary px-3"
-                                    href="{{ route('sitlogin.order', $car->id) }}">{{ $car->salary }}</a>
+                                    href="{{ route('sitlogin.ordersp', $sparepart->id) }}">{{ $sparepart->salary }}</a>
                             </div>
                         </div>
                     @endforeach

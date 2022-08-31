@@ -1,31 +1,16 @@
 <!-- Banner Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="bg-banner py-5 px-4 text-center">
-            <div class="py-5">
-                <h1 class="display-1 text-uppercase text-primary mb-4">50% OFF</h1>
-                <h1 class="text-uppercase text-light mb-4">Special Offer For New Members</h1>
-                <p class="mb-4">Only for Sunday from 1st Jan to 30th Jan 2045</p>
-                @if (request()->route()->getName() == 'sitlogin')
-                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
-                @else
-                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
-                @endif
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Banner End -->
 
 
 <!-- Rent A Car Start -->
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
-        <h1 class="display-1 text-primary text-center">02</h1>
+        <h1 class="display-1 text-primary text-center">00</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
         @if (request()->route()->getName() == 'sitlogin.')
-            <a href="{{ route('sitlogin.showcar') }}" style="margin-left: 41%"
-                class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
+            <a href="{{ route('sitlogin.shows') }}" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve
+                Now</a>
         @else
             <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
         @endif
@@ -96,7 +81,7 @@
             </div>
 
             @if (request()->route()->getName() == 'sitlogin.')
-                <a href="{{ route('sitlogin.showcar') }}" style="margin-left: 41%"
+                <a href="{{ route('sitlogin.shows') }}" style="margin-left: 41%"
                     class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
             @else
                 <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>

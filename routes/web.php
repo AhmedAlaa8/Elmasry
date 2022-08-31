@@ -44,6 +44,13 @@ Route::group(['prefix' => 'sitlogin', 'as' => 'sitlogin.', 'middleware' => 'auth
 
     Route::get('', [SitController::class, 'sitlogin'])->name('');
     Route::get('/showcar', [SitController::class, 'showcar'])->name('showcar');
+    Route::get('/showimagecar{car}', [SitController::class, 'showimagecar'])->name('showimagecar');
+    Route::get('/ordersp{spareparts}', [SitController::class, 'ordersp'])->name('ordersp');
+    Route::get('/order{car}', [SitController::class, 'order'])->name('order');
+    Route::post('/store', [SitController::class, 'store'])->name('store');
+    Route::get('/shows', [SitController::class, 'shows'])->name('shows');
+    Route::get('/showimages{spareparts}', [SitController::class, 'showimages'])->name('showimages');
+    Route::post('/storesp', [SitController::class, 'storesp'])->name('storesp');
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {

@@ -4,6 +4,7 @@
 @include('sit.layouts.about')
 
 @include('sit.layouts.car')
+@include('sit.layouts.spareparts')
 @include('sit.layouts.tame')
 
 

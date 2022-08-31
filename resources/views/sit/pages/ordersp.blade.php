@@ -48,9 +48,6 @@
             <div class="col-md-6 text-center text-lg-right">
 
 
-
-
-
                 <div class="d-inline-flex align-items-center ">
 
                     <a class="text-body px-3" href="">
@@ -79,67 +76,78 @@
     <div class="container-fluid position-relative nav-bar p-0">
 
         @include('sit.layouts.nav')
-
-        <!-- Banner Start -->
         <div class="container-fluid py-5">
-            <div class="container py-5">
-                <div class="bg-banner py-5 px-4 text-center">
-                    <div class="py-5">
-                        <h1 class="display-1 text-uppercase text-primary mb-4">50% OFF</h1>
-                        <h1 class="text-uppercase text-light mb-4">Special Offer For New Members</h1>
-                        <p class="mb-4">Only for Sunday from 1st Jan to 30th Jan 2045</p>
-                        @if (request()->route()->getName() == 'sitlogin')
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
-                        @else
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
-                        @endif
+            <div class="container p-5 ">
+                <div style="margin-left: 26%">
+                    <div class="col-lg-7 mb-2">
+
+
+                        <div class="shadow-lg p-5 mb-2  bg-body rounded">
+                            <form method="post" action="{{ route('sitlogin.storesp') }}">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="name">الاسم</label>
+                                        <input type="text" value="{{ old('name') }}" class="form-control"
+                                            id="text" name="name">
+
+                                        @error('name')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="adress">العنوان</label>
+                                        <input type="text" value="{{ old('adress') }}" class="form-control"
+                                            id="text" name="adress">
+
+                                        @error('adress')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="phone">الهاتف</label>
+                                        <input type="text" value="{{ old('phone') }}" class="form-control"
+                                            id="text" name="phone">
+
+                                        @error('phone')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone2"> هاتف اخر</label>
+                                        <input type="text" value="{{ old('phone2') }}" class="form-control"
+                                            id="text" name="phone2">
+
+                                        @error('phone2')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+
+
+                                    <input type="hidden" value="{{ $spareparts->salary }}" name="salary">
+                                    <input type="hidden" value="{{ $spareparts->id }}" name="spare_parts_id">
+                                    <input type="hidden" value="{{ $user->id }}" name="user_id">
+
+
+
+
+                                </div>
+
+
+                                <!-- /.card-body -->
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Banner End -->
-
-
-        <!-- Rent A Car Start -->
-        <div class="container-fluid py-5">
-
-            <div class="container pt-5 pb-3">
-                <div class="row">
-                    @foreach ($cars as $car)
-                        @php
-                            $x = explode(' ', $car->image_car);
-                        @endphp
-                        <div class="col-lg-4 col-md-6 mb-2">
-                            <div class="rent-item mb-4">
-                                <img class="img-fluid mb-4" style="height: 200px"
-                                    src="{{ asset('images/car/') }}/{{ $x[0] }}" alt="">
-                                <h5> <a class="nav-item nav-link text-info "
-                                        href="{{ route('sitlogin.showimagecar', $car->id) }}">Show image</a></h5>
-                                <h4 class="text-uppercase mb-4">{{ $car->name }}</h4>
-                                <div class="d-flex justify-content-center mb-4">
-                                    <div class="px-2">
-                                        <i class="fa fa-car text-primary mr-1"></i>
-                                        <span>{{ $car->type }}</span>
-                                    </div>
-                                    <div class="px-2 border-left border-right">
-                                        <i class="fa fa-cogs text-primary mr-1"></i>
-                                        <span>AUTO</span>
-                                    </div>
-                                    <div class="px-2">
-                                        <i class="fa fa-road text-primary mr-1"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <a class="btn btn-primary px-3"
-                                    href="{{ route('sitlogin.order', $car->id) }}">{{ $car->salary }}</a>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <!-- Rent A Car End -->
-
-
-
         @include('sit.layouts.footer')
