@@ -1,5 +1,5 @@
 <!-- Team Start -->
-<div class="container-fluid py-5">
+{{-- <div class="container-fluid py-5">
     <div class="container py-5">
         <h1 class="display-1 text-primary text-center">03</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Meet Our Team</h1>
@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Team End -->
 
 <!-- Banner Start -->
@@ -83,7 +83,7 @@
                     <div class="text-right">
                         <h3 class="text-uppercase text-light mb-3">Want to be driver?</h3>
                         <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                        <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
+                        {{-- <a class="btn btn-primary py-2 px-4" href="">Start Now</a> --}}
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <div class="text-left">
                         <h3 class="text-uppercase text-light mb-3">Looking for a car?</h3>
                         <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                        <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
+                        {{-- <a class="btn btn-primary py-2 px-4" href="">Start Now</a> --}}
                     </div>
                     <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="img/banner-right.png" alt="">
                 </div>

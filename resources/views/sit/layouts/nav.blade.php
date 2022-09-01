@@ -11,17 +11,39 @@
 
                 @if (request()->route()->getName() == 'sitlogin.')
                     <a href="{{ route('sit.logout') }}" class="nav-item nav-link text-danger">Logout</a>
-                @else
+
+                    <a href="{{ route('sitlogin.') }}" class="nav-item nav-link text-primary">HOME</a>
+                    <a href="{{ route('sitlogin.showcar') }}" class="nav-item nav-link text-primary">Show Car</a>
+                    <a href="{{ route('sitlogin.shows') }}" class="nav-item nav-link text-primary">Show spareparts</a>
+                @elseif (request()->route()->getName() == 'sitlogin.ordersp')
+                    <a href="{{ route('sitlogin.') }}" class="nav-item nav-link text-primary">HOME</a>
+                    <a href="{{ route('sitlogin.showcar') }}" class="nav-item nav-link text-primary">Show Car</a>
+                    <a href="{{ route('sitlogin.shows') }}" class="nav-item nav-link text-primary">Show spareparts</a>
+                @elseif (request()->route()->getName() == 'sitlogin.order')
+                    <a href="{{ route('sitlogin.') }}" class="nav-item nav-link text-primary">HOME</a>
+                    <a href="{{ route('sitlogin.showcar') }}" class="nav-item nav-link text-primary">Show Car</a>
+                    <a href="{{ route('sitlogin.shows') }}" class="nav-item nav-link text-primary">Show spareparts</a>
+                @elseif (request()->route()->getName() == 'sitlogin.showcar')
+                    <a href="{{ route('sitlogin.') }}" class="nav-item nav-link text-primary">HOME</a>
+                    <a href="{{ route('sitlogin.showcar') }}" class="nav-item nav-link text-primary">Show Car</a>
+                    <a href="{{ route('sitlogin.shows') }}" class="nav-item nav-link text-primary">Show spareparts</a>
+                @elseif (request()->route()->getName() == 'sitlogin.shows')
+                    <a href="{{ route('sitlogin.') }}" class="nav-item nav-link text-primary">HOME</a>
+                    <a href="{{ route('sitlogin.showcar') }}" class="nav-item nav-link text-primary">Show Car</a>
+                    <a href="{{ route('sitlogin.shows') }}" class="nav-item nav-link text-primary">Show spareparts</a>
+                @elseif (request()->route()->getName() == 'sit')
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">siting</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+
+                            <a href="{{ route('sit.loginPage') }}" class="dropdown-item">Log in</a>
+                            <a href="{{ route('sit.re') }}" class="dropdown-item">Sing Up</a>
+
+                        </div>
+                    </div>
                 @endif
 
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                        <a href="car.html" class="dropdown-item">Car Listing</a>
-                        <a href="detail.html" class="dropdown-item">Car Detail</a>
-                        <a href="booking.html" class="dropdown-item">Car Booking</a>
-                    </div>
-                </div>
+
 
             </div>
         </div>

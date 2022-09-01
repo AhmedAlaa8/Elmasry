@@ -1,5 +1,5 @@
 <!-- Testimonial Start -->
-<div class="container-fluid py-5">
+{{-- <div class="container-fluid py-5">
     <div class="container py-5">
         <h1 class="display-1 text-primary text-center">04</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Our Client's Say</h1>
@@ -46,14 +46,14 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Testimonial End -->
 
 
 <!-- Contact Start -->
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
-        <h1 class="display-1 text-primary text-center">05</h1>
+        <h1 class="display-1 text-primary text-center">04</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Contact Us</h1>
         <div class="row">
             <div class="col-lg-7 mb-2">
@@ -61,7 +61,10 @@
                     <h1 class="display-1 text-uppercase text-primary mb-4"> OFF</h1>
                     <h1 class="text-uppercase text-light mb-4">Special Offer For New Members</h1>
 
-                    <a class="btn btn-primary mt-2 py-3 px-5" href="">Register Now</a>
+                    <a class="btn btn-primary mt-2 py-3 px-5" target="_blank"
+                        href="https://www.google.com/maps/place/%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D8%A9%D8%8C+%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D8%A9+(%D9%82%D8%B3%D9%85+2)%D8%8C+%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D8%A9%D8%8C+%D8%A7%D9%84%D8%AF%D9%82%D9%87%D9%84%D9%8A%D8%A9%E2%80%AD/@31.0413814,31.4178592,13z/data=!3m1!4b1!4m5!3m4!1s0x14f79db7a9053547:0xf8dab3bbed766c97!8m2!3d31.0409478!4d31.3784552">
+                        google maps</a>
+
                 </div>
             </div>
             <div class="col-lg-5 mb-2">

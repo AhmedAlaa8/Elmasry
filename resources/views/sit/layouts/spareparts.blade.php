@@ -6,15 +6,15 @@
 <!-- Rent A Car Start -->
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
-        <h1 class="display-1 text-primary text-center">00</h1>
+        <h1 class="display-1 text-primary text-center">03</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
         @if (request()->route()->getName() == 'sitlogin.')
-            <a href="{{ route('sitlogin.shows') }}" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve
-                Now</a>
+            <a href="{{ route('sitlogin.shows') }}" style="margin-left: 41%" class="btn btn-info mb-4 py-2 px-5">Show
+                spareparts</a>
         @else
-            <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
+            <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%" class="btn btn-info mb-4 py-2 px-5">login
+                Now</a>
         @endif
-
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
@@ -82,9 +82,12 @@
 
             @if (request()->route()->getName() == 'sitlogin.')
                 <a href="{{ route('sitlogin.shows') }}" style="margin-left: 41%"
-                    class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
+                    class="btn btn-info mt-2 py-2 px-5">Show
+                    spareparts</a>
             @else
-                <a href="" style="margin-left: 41%" class="btn btn-info mt-2 py-2 px-5">Reserve Now</a>
+                <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                    class="btn btn-info mt-2 py-2 px-5">login
+                    Now</a>
             @endif
         </div>
     </div>

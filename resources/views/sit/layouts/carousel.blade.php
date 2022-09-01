@@ -17,9 +17,11 @@
                         <h4 class="text-white text-uppercase mb-md-3">Rent A Car</h4>
                         <h1 class="display-1 text-white mb-md-4">Best Rental Cars In Your Location</h1>
                         @if (request()->route()->getName() == 'sitlogin')
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                            <a href="{{ route('sitlogin.showcar') }}" class="btn btn-primary py-md-3 px-md-5 mt-2">Show
+                                Car</a>
                         @else
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                            <a href="{{ route('sit.loginPage') }}" class="btn btn-primary py-md-3 px-md-5 mt-2">Show
+                                Car</a>
                         @endif
                     </div>
                 </div>
@@ -31,9 +33,11 @@
                         <h4 class="text-white text-uppercase mb-md-3">Rent A Car</h4>
                         <h1 class="display-1 text-white mb-md-4">Quality Cars with Unlimited Miles</h1>
                         @if (request()->route()->getName() == 'sitlogin')
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                            <a href="{{ route('sitlogin.showcar') }}" class="btn btn-primary py-md-3 px-md-5 mt-2">Show
+                                spareparts</a>
                         @else
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                            <a href="{{ route('sit.loginPage') }}" class="btn btn-primary py-md-3 px-md-5 mt-2">Show
+                                spareparts</a>
                         @endif
 
                     </div>

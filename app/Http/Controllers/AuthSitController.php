@@ -54,6 +54,6 @@ class AuthSitController extends Controller
     {
         Auth::logout();
 
-        return redirect(route('sit.loginPage'));
+        return redirect(route('sit'));
     }
 }

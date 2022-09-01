@@ -47,9 +47,11 @@
 
             <div class="col-md-6 text-center text-lg-right">
 
-
-                <a href="{{ route('sit.loginPage') }}" class="btn btn-primary rounded"> Log in </a>
-                <a href="{{ route('sit.re') }}" class="btn btn-secondary rounded">Sing Up</a>
+                @if (request()->route()->getName() == 'sit')
+                    <a href="{{ route('sit.loginPage') }}" class="btn btn-primary rounded"> Log in </a>
+                    <a href="{{ route('sit.re') }}" class="btn btn-secondary rounded">Sing Up</a>
+                @else
+                @endif
 
                 <div class="d-inline-flex align-items-center ">
 
