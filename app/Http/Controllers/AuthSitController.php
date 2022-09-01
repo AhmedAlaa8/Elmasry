@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+session_start();
+
 use App\Http\Requests\sit\LoginRequest;
 use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
@@ -42,6 +44,8 @@ class AuthSitController extends Controller
 
         $card = $request->only('email', 'password');;
         if (Auth::attempt($card)) {
+
+            $_SESSION['user'] = 1;
             $x = auth()->user();
             Alert::success('تم الدخول', 'نجاح');
             return redirect(route('sitlogin.'));
@@ -53,7 +57,7 @@ class AuthSitController extends Controller
     public function logout()
     {
         Auth::logout();
-
+        session_unset();
         return redirect(route('sit'));
     }
 }

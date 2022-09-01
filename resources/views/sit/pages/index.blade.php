@@ -1,3 +1,11 @@
+@php
+session_start();
+if (isset($_SESSION['user'])) {
+    header('location:/sitlogin');
+    die();
+}
+@endphp
+
 @include('sit.layouts.head')
 @include('sit.layouts.nav')
 @include('sit.layouts.carousel')
