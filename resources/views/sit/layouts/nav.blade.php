@@ -31,9 +31,15 @@
                     <a href="{{ route('sitlogin.') }}" class="nav-item nav-link text-primary">HOME</a>
                     <a href="{{ route('sitlogin.showcar') }}" class="nav-item nav-link text-primary">Show Car</a>
                     <a href="{{ route('sitlogin.shows') }}" class="nav-item nav-link text-primary">Show spareparts</a>
+                @elseif (request()->route()->getName() == 'sit.loginPage')
+                    <a href="{{ route('home') }}" class="nav-item nav-link text-primary">HOME</a>
+                    <a href="{{ route('sit.re') }}" class="nav-item nav-link text-primary">Sing Up</a>
+                @elseif (request()->route()->getName() == 'sit.sitre')
+                    <a href="{{ route('home') }}" class="nav-item nav-link text-primary">HOME</a>
+                    <a href="{{ route('sit.loginPage') }}" class="nav-item nav-link text-primary">Log in</a>
                 @elseif (request()->route()->getName() == 'sit')
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">siting</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">settings</a>
                         <div class="dropdown-menu rounded-0 m-0">
 
                             <a href="{{ route('sit.loginPage') }}" class="dropdown-item">Log in</a>

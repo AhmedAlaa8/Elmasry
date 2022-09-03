@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect('pages/');
-});
+})->name('home');
 
 
 Route::group(['prefix' => 'pages', 'as' => 'sit.'], function () {
