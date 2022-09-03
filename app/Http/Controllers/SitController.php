@@ -21,7 +21,8 @@ class SitController extends Controller
     }
     public function sitlogin()
     {
-        return view('sit.pages.sitlogin');
+        $cars = Car::get();
+        return view('sit.pages.sitlogin', compact('cars'));
     }
     public function showcar()
     {

@@ -30,12 +30,13 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="{{ asset('sit') }}/img/car-rent-1.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <img class="img-fluid mb-4" style="height: 200px" src="{{ asset('sit') }}/img/car-rent-1.png"
+                        alt="">
+                    <h4 class="text-uppercase mb-4">{{ $cars[0]->name }}</h4>
                     <div class="d-flex justify-content-center mb-4">
                         <div class="px-2">
                             <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
+                            <span>{{ $cars[0]->type }}</span>
                         </div>
                         <div class="px-2 border-left border-right">
                             <i class="fa fa-cogs text-primary mr-1"></i>
@@ -43,41 +44,27 @@
                         </div>
                         <div class="px-2">
                             <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
+
                         </div>
                     </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item active mb-4">
-                    <img class="img-fluid mb-4" src="{{ asset('sit') }}/img/car-rent-2.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
+                    <div class="nav-item nav-link">
+                        {{ $cars[0]->detilse }}
                     </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                    <a class="btn btn-primary px-3" href="">{{ $cars[0]->salary }}</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="{{ asset('sit') }}/img/car-rent-3.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    @php
+                        $x = explode(' ', $cars[1]->image_car);
+                    @endphp
+                    <img class="img-fluid mb-4" style="height: 200px" src="{{ asset('images/car') . "/$x[0]" }}"
+                        alt="">
+                    <h4 class="text-uppercase mb-4">{{ $cars[1]->name }}</h4>
                     <div class="d-flex justify-content-center mb-4">
                         <div class="px-2">
                             <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
+                            <span>{{ $cars[1]->type }}</span>
                         </div>
                         <div class="px-2 border-left border-right">
                             <i class="fa fa-cogs text-primary mr-1"></i>
@@ -85,12 +72,46 @@
                         </div>
                         <div class="px-2">
                             <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
+
                         </div>
                     </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                    <div class="nav-item nav-link">
+                        {{ $cars[1]->detilse }}
+                    </div>
+                    <a class="btn btn-primary px-3" href="">{{ $cars[1]->salary }}</a>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    @php
+                        $x = explode(' ', $cars[2]->image_car);
+                    @endphp
+                    <img class="img-fluid mb-4" style="height: 200px" src="{{ asset('images/car') . "/$x[0]" }}"
+                        alt="">
+                    <h4 class="text-uppercase mb-4">{{ $cars[2]->name }}</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>{{ $cars[2]->type }}</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+
+                        </div>
+                    </div>
+                    <div class="nav-item nav-link">
+                        {{ $cars[2]->detilse }}
+                    </div>
+                    <a class="btn btn-primary px-3" href="">{{ $cars[2]->salary }}</a>
+                </div>
+            </div>
+
+
+
 
         </div>
         @if (request()->route()->getName() == 'sitlogin.')

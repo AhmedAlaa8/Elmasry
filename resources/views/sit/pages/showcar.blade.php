@@ -47,6 +47,9 @@
                                 <span></span>
                             </div>
                         </div>
+                        <div class="nav-item nav-link">
+                            {{ $car->detilse }}
+                        </div>
                         <a class="btn btn-primary px-3"
                             href="{{ route('sitlogin.order', $car->id) }}">{{ $car->salary }}</a>
                     </div>
