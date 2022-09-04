@@ -7,6 +7,7 @@ use App\Http\Traits\imageTrait;
 use App\Http\Requests\car\CarStoreRequest;
 use App\Http\Requests\car\CarUpdateRequest;
 use App\Models\Car;
+use App\Models\Store;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -37,6 +38,15 @@ class CarController extends Controller
             'detilse' => $request->detilse,
             'existing' => $request->existing ?? "0",
         ]);
+
+        if ($request->existing == 1) {
+
+            Store::create([
+                'name_category' => $request->name,
+                'salary_category' => $request->salary,
+
+            ]);
+        }
         Alert::success('تمت العمليه بنجاح', 'نجاح');
         return redirect()->back();
     }

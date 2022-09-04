@@ -7,6 +7,7 @@ use App\Http\Requests\sp\SparePartsStoreRequest;
 use App\Http\Requests\sp\SparePartsUpdateRequest;
 use App\Http\Traits\imageTrait;
 use App\Models\SpareParts;
+use App\Models\Store;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -36,6 +37,16 @@ class SparePartsController extends Controller
             'detilse' => $request->detilse,
             'existing' => $request->existing ?? "0",
         ]);
+
+        if ($request->existing == 1) {
+
+            Store::create([
+                'name_category' => $request->name,
+                'salary_category' => $request->salary,
+
+            ]);
+        }
+
         Alert::success('تمت العمليه بنجاح', 'نجاح');
         return redirect()->back();
     }

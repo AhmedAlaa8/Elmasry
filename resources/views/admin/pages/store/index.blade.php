@@ -30,22 +30,23 @@
                                 <th>الضبط</th>
                             </tr>
                         </thead>
-
+                        @php
+                            $x = 0;
+                        @endphp
                         <tbody>
                             @foreach ($stores as $key => $store)
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $store->name_category }}</td>
                                     <td>{{ $store->salary_category }}</td>
-
-
+                                    @php
+                                        $x += $store->salary_category;
+                                    @endphp
                                     <td>
                                         <a href="{{ route('admin.store.edit', $store->id) }}"
                                             class="btn btn-outline-info m-2">
                                             <i class="fas fa-highlighter"></i>
                                         </a>
-
-
 
                                         <form action="{{ route('admin.store.delete', $store->id) }}" method="post">
                                             @csrf
@@ -58,6 +59,22 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            <tr>
+                                <td>
+                                    المجموع
+                                </td>
+                                <td>
+                                    =============>
+                                </td>
+                                <td>
+                                    @php
+                                        echo $x;
+                                    @endphp
+                                </td>
+                                <td>
+
+                                </td>
+                            </tr>
 
 
                         </tbody>

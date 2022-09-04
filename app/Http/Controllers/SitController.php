@@ -17,12 +17,15 @@ class SitController extends Controller
 {
     public function sit()
     {
-        return view('sit.pages.index');
+        $cars = Car::get();
+        $spareparts = SpareParts::get();
+        return view('sit.pages.index', compact('cars', 'spareparts'));
     }
     public function sitlogin()
     {
         $cars = Car::get();
-        return view('sit.pages.sitlogin', compact('cars'));
+        $spareparts = SpareParts::get();
+        return view('sit.pages.sitlogin', compact('cars', 'spareparts'));
     }
     public function showcar()
     {

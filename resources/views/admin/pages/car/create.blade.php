@@ -61,7 +61,7 @@
 
                             <div class="form-group">
                                 <label for="salary"> السعر</label>
-                                <input type="text" value="{{ old('salary') }}" class="form-control" id="salary"
+                                <input type="number" value="{{ old('salary') }}" class="form-control" id="salary"
                                     name="salary">
                                 @error('salary')
                                     <p class="text-danger">{{ $message }}</p>

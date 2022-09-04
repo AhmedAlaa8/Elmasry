@@ -62,7 +62,7 @@
 
                             <div class="form-group">
                                 <label for="salary"> السعر</label>
-                                <input type="text" value="{{ $car->salary }}" class="form-control" id="salary"
+                                <input type="number" value="{{ $car->salary }}" class="form-control" id="salary"
                                     name="salary">
                                 @error('salary')
                                     <p class="text-danger">{{ $message }}</p>
