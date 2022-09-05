@@ -9,10 +9,10 @@
         <h1 class="display-1 text-primary text-center">03</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
         @if (request()->route()->getName() == 'sitlogin.')
-            <a href="{{ route('sitlogin.shows') }}" style="margin-left: 41%" class="btn btn-info mb-4 py-2 px-5">Show
+            <a href="{{ route('sitlogin.shows') }}" style="margin-left: 40%" class="btn btn-info mb-4 py-2 px-5">Show
                 spareparts</a>
         @else
-            <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%" class="btn btn-info mb-4 py-2 px-5">login
+            <a href="{{ route('sit.loginPage') }}" style="margin-left: 40%" class="btn btn-info mb-4 py-2 px-5">login
                 Now</a>
         @endif
         <div class="row">
@@ -41,7 +41,14 @@
                     <div class="nav-item nav-link">
                         {{ $spareparts[0]->detilse }}
                     </div>
-                    <a class="btn btn-primary px-3" href="">{{ $spareparts[0]->salary }}</a>
+                    @if (request()->route()->getName() == 'sitlogin.')
+                        <a class="btn btn-primary px-3"
+                            href="{{ route('sitlogin.order', $spareparts[0]->id) }}">{{ $spareparts[0]->salary }}</a>
+                    @else
+                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                            class="btn btn-info mt-2 py-2 px-5">login
+                            Now</a>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-2">
@@ -69,7 +76,14 @@
                     <div class="nav-item nav-link">
                         {{ $spareparts[1]->detilse }}
                     </div>
-                    <a class="btn btn-primary px-3" href="">{{ $spareparts[1]->salary }}</a>
+                    @if (request()->route()->getName() == 'sitlogin.')
+                        <a class="btn btn-primary px-3"
+                            href="{{ route('sitlogin.order', $spareparts[1]->id) }}">{{ $spareparts[1]->salary }}</a>
+                    @else
+                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                            class="btn btn-info mt-2 py-2 px-5">login
+                            Now</a>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-2">
@@ -97,17 +111,24 @@
                     <div class="nav-item nav-link">
                         {{ $spareparts[2]->detilse }}
                     </div>
-                    <a class="btn btn-primary px-3" href="">{{ $spareparts[2]->salary }}</a>
+                    @if (request()->route()->getName() == 'sitlogin.')
+                        <a class="btn btn-primary px-3"
+                            href="{{ route('sitlogin.order', $spareparts[2]->id) }}">{{ $spareparts[2]->salary }}</a>
+                    @else
+                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                            class="btn btn-info mt-2 py-2 px-5">login
+                            Now</a>
+                    @endif
                 </div>
             </div>
 
 
             @if (request()->route()->getName() == 'sitlogin.')
-                <a href="{{ route('sitlogin.shows') }}" style="margin-left: 41%"
+                <a href="{{ route('sitlogin.shows') }}" style="margin-left: 40%"
                     class="btn btn-info mt-2 py-2 px-5">Show
                     spareparts</a>
             @else
-                <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                <a href="{{ route('sit.loginPage') }}" style="margin-left: 40%"
                     class="btn btn-info mt-2 py-2 px-5">login
                     Now</a>
             @endif

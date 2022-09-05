@@ -50,7 +50,14 @@
                     <div class="nav-item nav-link">
                         {{ $cars[0]->detilse }}
                     </div>
-                    <a class="btn btn-primary px-3" href="">{{ $cars[0]->salary }}</a>
+                    @if (request()->route()->getName() == 'sitlogin.')
+                        <a class="btn btn-primary px-3"
+                            href="{{ route('sitlogin.order', $cars[0]->id) }}">{{ $cars[0]->salary }}</a>
+                    @else
+                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                            class="btn btn-info mt-2 py-2 px-5">login
+                            Now</a>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-2">
@@ -78,7 +85,14 @@
                     <div class="nav-item nav-link">
                         {{ $cars[1]->detilse }}
                     </div>
-                    <a class="btn btn-primary px-3" href="">{{ $cars[1]->salary }}</a>
+                    @if (request()->route()->getName() == 'sitlogin.')
+                        <a class="btn btn-primary px-3"
+                            href="{{ route('sitlogin.order', $cars[1]->id) }}">{{ $cars[1]->salary }}</a>
+                    @else
+                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                            class="btn btn-info mt-2 py-2 px-5">login
+                            Now</a>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-2">
@@ -106,7 +120,14 @@
                     <div class="nav-item nav-link">
                         {{ $cars[2]->detilse }}
                     </div>
-                    <a class="btn btn-primary px-3" href="">{{ $cars[2]->salary }}</a>
+                    @if (request()->route()->getName() == 'sitlogin.')
+                        <a class="btn btn-primary px-3"
+                            href="{{ route('sitlogin.order', $cars[2]->id) }}">{{ $cars[2]->salary }}</a>
+                    @else
+                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
+                            class="btn btn-info mt-2 py-2 px-5">login
+                            Now</a>
+                    @endif
                 </div>
             </div>
 

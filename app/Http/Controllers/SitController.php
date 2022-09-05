@@ -61,6 +61,7 @@ class SitController extends Controller
     public function storesp(OrderStoreRequest $request)
     {
 
+
         Order::create([
             'name' => $request->name,
             'phone' => $request->phone,
@@ -72,7 +73,7 @@ class SitController extends Controller
 
         ]);
 
-        Alert::success('سوف يتم التواصل معك في تقرب وقت', 'نجاح شكرا لثقتك بنا');
+        Alert::success('سوف يتم التواصل معك في اقرب وقت', 'نجاح شكرا لثقتك بنا');
         return redirect(route('sitlogin.'));
     }
     public function store(OrdercarStoreRequest $request)
@@ -87,7 +88,7 @@ class SitController extends Controller
             'car_id' => $request->car_id,
 
         ]);
-        Alert::success('سوف يتم التواصل معك في تقرب وقت', 'نجاح شكرا لثقتك بنا');
+        Alert::success('سوف يتم التواصل معك في اقرب وقت', 'نجاح شكرا لثقتك بنا');
         return redirect(route('sitlogin.'));
     }
 }
