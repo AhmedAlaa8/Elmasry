@@ -30,18 +30,14 @@
                                 <th>الضبط</th>
                             </tr>
                         </thead>
-                        @php
-                            $x = 0;
-                        @endphp
+
                         <tbody>
                             @foreach ($stores as $key => $store)
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $store->name_category }}</td>
                                     <td>{{ $store->salary_category }}</td>
-                                    @php
-                                        $x += $store->salary_category;
-                                    @endphp
+
                                     <td>
                                         <a href="{{ route('admin.store.edit', $store->id) }}"
                                             class="btn btn-outline-info m-2">
@@ -67,9 +63,7 @@
                                     =============>
                                 </td>
                                 <td>
-                                    @php
-                                        echo $x;
-                                    @endphp
+                                    {{ $stores->sum('salary_category') }}
                                 </td>
                                 <td>
 

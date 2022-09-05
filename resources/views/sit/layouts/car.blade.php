@@ -54,8 +54,7 @@
                         <a class="btn btn-primary px-3"
                             href="{{ route('sitlogin.order', $cars[0]->id) }}">{{ $cars[0]->salary }}</a>
                     @else
-                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
-                            class="btn btn-info mt-2 py-2 px-5">login
+                        <a href="{{ route('sit.loginPage') }}" class="btn btn-info px-3">login
                             Now</a>
                     @endif
                 </div>
@@ -89,8 +88,7 @@
                         <a class="btn btn-primary px-3"
                             href="{{ route('sitlogin.order', $cars[1]->id) }}">{{ $cars[1]->salary }}</a>
                     @else
-                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
-                            class="btn btn-info mt-2 py-2 px-5">login
+                        <a href="{{ route('sit.loginPage') }}" class="btn btn-info px-3">login
                             Now</a>
                     @endif
                 </div>
@@ -124,8 +122,7 @@
                         <a class="btn btn-primary px-3"
                             href="{{ route('sitlogin.order', $cars[2]->id) }}">{{ $cars[2]->salary }}</a>
                     @else
-                        <a href="{{ route('sit.loginPage') }}" style="margin-left: 41%"
-                            class="btn btn-info mt-2 py-2 px-5">login
+                        <a href="{{ route('sit.loginPage') }}" class="btn btn-info px-3">login
                             Now</a>
                     @endif
                 </div>

@@ -30,6 +30,7 @@
                                 <th> قطع الغيار</th>
                                 <th>المستخدم</th>
                                 <th>العنوان</th>
+                                <th>الوقت</th>
                                 <th>الضبط</th>
                             </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                     <td>{{ $order->spare_parts->name }}</td>
                                     <td>{{ $order->user->name }}</td>
                                     <td>{{ $order->adress }}</td>
+                                    <td>{{ $order->created_at }}</td>
 
 
                                     <td>
@@ -81,6 +83,7 @@
                                 <th> قطع الغيار</th>
                                 <th>المستخدم</th>
                                 <th>العنوان</th>
+                                <th>الوقت</th>
                                 <th>الضبط</th>
                             </tr>
                         </tfoot>

@@ -9,6 +9,9 @@ use App\Http\Controllers\SitController;
 use App\Http\Controllers\SparePartsController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
+use App\Models\Order;
+use App\Models\OrderCar;
+use App\Models\Store;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,7 +67,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
 
     Route::get('/', function () {
-        return view('admin.index');
+        $orders = Order::get();
+        $ordercars = OrderCar::get();
+        $store = Store::get();
+        return view('admin.index', compact('orders', 'ordercars', 'store'));
     })->name('home');
 
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {

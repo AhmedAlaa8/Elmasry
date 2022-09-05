@@ -30,6 +30,7 @@
                                 <th> السياره </th>
                                 <th> المستخدم </th>
                                 <th>العنوان</th>
+                                <th>الوقت</th>
                                 <th>الضبط</th>
                             </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                     <td>{{ $ordercar->car->name }}</td>
                                     <td>{{ $ordercar->user->name }}</td>
                                     <td>{{ $ordercar->adress }}</td>
+                                    <td>{{ $ordercar->created_at }}</td>
 
 
                                     <td>
@@ -81,6 +83,7 @@
                                 <th> السياره </th>
                                 <th> المستخدم </th>
                                 <th>العنوان</th>
+                                <th>الوقت</th>
                                 <th>الضبط</th>
                             </tr>
                         </tfoot>
