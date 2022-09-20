@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\order\OrderDeleteRequest;
 use App\Http\Requests\order\OrderStoreRequest;
 use App\Http\Requests\order\OrderUpdateRequest;
-use App\Models\Car;
+
 use App\Models\Order;
 use App\Models\SpareParts;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -68,5 +69,25 @@ class OrderController extends Controller
         $order->delete();
         Alert::success('تمت العمليه بنجاح', 'نجاح');
         return redirect(route('admin.order.index'));
+    }
+
+    public function ajax($id)
+    {
+
+        $x = SpareParts::find($id);
+
+        $z = $x->salary;
+
+        return response()->json(['salary' => $z]);
+    }
+
+    public function ajax1($id)
+    {
+
+        $x = User::find($id);
+
+        $z = $x->only(['name', 'adress', 'phone']);
+
+        return response()->json(['name' => $z['name'], 'adress' => $z['adress'], 'phone' => $z['phone']]);
     }
 }

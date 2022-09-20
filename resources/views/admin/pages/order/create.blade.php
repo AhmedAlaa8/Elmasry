@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">الاسم</label>
-                                <input type="text" value="{{ old('name') }}" class="form-control" id="text"
+                                <input type="text" value="{{ old('name') }}" class="form-control" id="name"
                                     name="name">
 
                                 @error('name')
@@ -28,7 +28,7 @@
 
                             <div class="form-group">
                                 <label for="adress">العنوان</label>
-                                <input type="text" value="{{ old('adress') }}" class="form-control" id="text"
+                                <input type="text" value="{{ old('adress') }}" class="form-control" id="adress"
                                     name="adress">
 
                                 @error('adress')
@@ -39,7 +39,7 @@
 
                             <div class="form-group">
                                 <label for="phone">الهاتف</label>
-                                <input type="text" value="{{ old('phone') }}" class="form-control" id="text"
+                                <input type="text" value="{{ old('phone') }}" class="form-control" id="phone"
                                     name="phone">
 
                                 @error('phone')
@@ -60,7 +60,7 @@
 
                             <div class="form-group">
                                 <label for="salary">السعر</label>
-                                <input type="number" value="{{ old('salary') }}" class="form-control" id="text"
+                                <input id="salary" type="number" value="{{ old('salary') }}" class="form-control"
                                     name="salary">
 
                                 @error('salary')
@@ -88,10 +88,12 @@
                             <div class="form-group">
                                 <label for="usaer_id">قطع الغيار</label>
                                 <select name="spare_parts_id" class="custom-select form-control-border"
-                                    id="exampleSelectBorder">
-                                    <option value="0"> اختر </option>
+                                    id="exampleSelectBorder1">
+                                    <option value="200"> اختر </option>
                                     @foreach ($spareparts as $sparepart)
-                                        <option value="{{ $sparepart->id }}"> {{ $sparepart->name }}</option>
+                                        <option value="{{ $sparepart->id }}">
+                                            {{ $sparepart->name }}
+                                        </option>
                                     @endforeach
 
                                 </select>
@@ -120,4 +122,41 @@
 
 
 @section('bread')
+@endsection
+
+@section('js')
+    <script>
+        $(document).on('change', '#exampleSelectBorder1', function(e) {
+            let x = $(this).val();
+
+            $.ajax({
+
+                url: '/admin/order/ajax/' + x,
+                type: "GET",
+                success: function(res) {
+
+                    $('#salary').val(res.salary)
+                }
+            })
+
+        });
+
+        $(document).on('change', '#exampleSelectBorder', function(e) {
+            let x = $(this).val();
+
+            $.ajax({
+
+                url: '/admin/order/ajax1/' + x,
+                type: "GET",
+                success: function(res) {
+
+                    $('#name').val(res.name)
+                    $('#adress').val(res.adress)
+                    $('#phone').val(res.phone)
+                }
+
+            })
+
+        });
+    </script>
 @endsection

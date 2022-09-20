@@ -32,6 +32,7 @@
 <!-- ChartJS -->
 <script src="{{ asset('adminLTE/plugins/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('adminLTE/dist/js/pages/dashboard2.js') }}"></script>
+@yield('js')
 
 @include('sweetalert::alert')
 

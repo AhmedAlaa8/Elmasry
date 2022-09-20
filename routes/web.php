@@ -109,6 +109,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/edit{order}', [OrderController::class, 'edit'])->name('edit');
         Route::put('/update{order}', [OrderController::class, 'update'])->name('update');
         Route::delete('/delete{order}', [OrderController::class, 'delete'])->name('delete');
+        Route::get('/ajax/{id}', [OrderController::class, 'ajax'])->name('ajax');
+        Route::get('/ajax1/{id}', [OrderController::class, 'ajax1'])->name('ajax1');
     });
     Route::group(['prefix' => 'ordercar', 'as' => 'ordercar.'], function () {
 
