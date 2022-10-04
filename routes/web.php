@@ -91,6 +91,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/edit{car}', [CarController::class, 'edit'])->name('edit');
         Route::put('/update{car}', [CarController::class, 'update'])->name('update');
         Route::delete('/delete{car}', [CarController::class, 'delete'])->name('delete');
+        Route::get('/arhive', [CarController::class, 'arhive'])->name('arhive');
+        Route::delete('/trash', [CarController::class, 'trash'])->name('trash');
+        Route::post('/restore', [CarController::class, 'restore'])->name('restore');
     });
     Route::group(['prefix' => 'store', 'as' => 'store.'], function () {
 

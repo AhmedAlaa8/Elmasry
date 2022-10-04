@@ -95,10 +95,24 @@ class CarController extends Controller
 
     public function delete(Car $car, CarDeleteRequest $request)
     {
-        $images = explode(' ', $car->image_car);
 
+        $car->delete();
 
+        Alert::success('تمت العمليه بنجاح', 'نجاح');
+        return redirect(route('admin.car.index'));
+    }
 
+    public function arhive()
+    {
+        $cars = Car::onlyTrashed()->paginate(20);
+        return view('admin.pages.car.arhive', compact('cars'));
+    }
+
+    public function trash(Car $car, CarDeleteRequest $request)
+    {
+        $x = $car::withTrashed()->find($request->id);
+
+        $images = explode(' ', $x->image_car);
 
         foreach ($images as $key => $image) {
             $path = 'images/car' . '/' . $image;
@@ -106,9 +120,16 @@ class CarController extends Controller
             $x = unlink($x);
         }
 
-        $car->delete();
-
-        Alert::success('تمت العمليه بنجاح', 'نجاح');
-        return redirect(route('admin.car.index'));
+        $car = $car::withTrashed()->find($request->id);
+        $car->forceDelete();
+        Alert::toast('تم حذف المخزون', 'success');
+        return redirect()->back();
+    }
+    public function restore(Car $car, CarDeleteRequest $request)
+    {
+        $car = $car::withTrashed()->find($request->id);
+        $car->restore();
+        Alert::toast('تم استرجاع المخزون', 'success');
+        return redirect()->back();
     }
 }

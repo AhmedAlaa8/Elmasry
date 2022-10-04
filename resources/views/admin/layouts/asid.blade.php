@@ -88,7 +88,8 @@
                 @if (request()->route()->getName() == 'admin.car.index' ||
                     request()->route()->getName() == 'admin.car.create' ||
                     request()->route()->getName() == 'admin.car.edit' ||
-                    request()->route()->getName() == 'admin.car.show')
+                    request()->route()->getName() == 'admin.car.show' ||
+                    request()->route()->getName() == 'admin.car.arhive')
                     <li class="nav-item menu-open">
                     @else
                     <li class="nav-item ">
@@ -117,6 +118,15 @@
                                 class="nav-link"> @endif
                             <i class="far fa-circle nav-icon"></i>
                             <p>اضافه</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.car.arhive') }}"
+                            @if (request()->route()->getName() == 'admin.car.arhive') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>سله المحزوفات</p>
                         </a>
                     </li>
                 </ul>
