@@ -100,6 +100,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/edit{store}', [StoreController::class, 'edit'])->name('edit');
         Route::put('/update{store}', [StoreController::class, 'update'])->name('update');
         Route::delete('/delete{store}', [StoreController::class, 'delete'])->name('delete');
+        Route::get('/arhive', [StoreController::class, 'arhive'])->name('arhive');
+        Route::delete('/trash', [StoreController::class, 'trash'])->name('trash');
+        Route::post('/restore', [StoreController::class, 'restore'])->name('restore');
     });
     Route::group(['prefix' => 'order', 'as' => 'order.'], function () {
 
@@ -120,6 +123,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/edit{ordercar}', [OrderCarController::class, 'edit'])->name('edit');
         Route::put('/update{ordercar}', [OrderCarController::class, 'update'])->name('update');
         Route::delete('/delete{ordercar}', [OrderCarController::class, 'delete'])->name('delete');
+        Route::get('/ajaxcar{id}', [OrderCarController::class, 'ajaxCar'])->name('ajaxcar');
+        Route::get('/ajaxcar1/{id}', [OrderCarController::class, 'ajaxCar1'])->name('ajaxcar1');
     });
     Route::group(['prefix' => 'spare_parts', 'as' => 'spare_parts.'], function () {
 

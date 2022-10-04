@@ -168,7 +168,8 @@
 
                 @if (request()->route()->getName() == 'admin.store.index' ||
                     request()->route()->getName() == 'admin.store.create' ||
-                    request()->route()->getName() == 'admin.store.edit')
+                    request()->route()->getName() == 'admin.store.edit' ||
+                    request()->route()->getName() == 'admin.store.arhive')
                     <li class="nav-item menu-open">
                     @else
                     <li class="nav-item ">
@@ -197,6 +198,15 @@
                                 class="nav-link"> @endif
                             <i class="far fa-circle nav-icon"></i>
                             <p>اضافه</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.store.arhive') }}"
+                            @if (request()->route()->getName() == 'admin.store.arhive') class="nav-link active">
+                                @else
+                                class="nav-link"> @endif
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>سله المحزوفات</p>
                         </a>
                     </li>
                 </ul>

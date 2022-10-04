@@ -68,4 +68,24 @@ class OrderCarController extends Controller
         Alert::success('تمت العمليه بنجاح', 'نجاح');
         return redirect(route('admin.ordercar.index'));
     }
+
+    public function ajaxCar($id)
+    {
+        $car = Car::find($id);
+
+
+        return response()->json([
+            'salary' => $car->salary
+        ]);
+    }
+
+    public function ajaxCar1($id)
+    {
+
+        $x = User::find($id);
+
+        $z = $x->only(['name', 'adress', 'phone']);
+
+        return response()->json(['name' => $z['name'], 'adress' => $z['adress'], 'phone' => $z['phone']]);
+    }
 }

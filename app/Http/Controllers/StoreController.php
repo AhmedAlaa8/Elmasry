@@ -49,4 +49,26 @@ class StoreController extends Controller
         Alert::success('تمت العمليه بنجاح', 'نجاح');
         return redirect(route('admin.store.index'));
     }
+
+    public function arhive()
+    {
+        $stores = Store::onlyTrashed()->get();
+        return view('admin.pages.store.arhive', compact('stores'));
+    }
+
+    public function trash(StoreDeleteRequest $request)
+    {
+        $stor = Store::withTrashed()->find($request->id);
+        $stor->forceDelete();
+        Alert::toast('تم حذف المخزون', 'success');
+        return redirect()->back();
+    }
+
+    public function restore(Request $request)
+    {
+        $stor = Store::withTrashed()->find($request->id);
+        $stor->restore();
+        Alert::toast('تم استرجاع المخزون', 'success');
+        return redirect()->back();
+    }
 }
