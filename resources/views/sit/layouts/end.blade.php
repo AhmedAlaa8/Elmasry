@@ -52,7 +52,7 @@
 
 <!-- Contact Start -->
 <div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
+    <div class="container pt-5 pb-3 center_elemint">
         <h1 class="display-1 text-primary text-center">04</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Contact Us</h1>
         <div class="row">

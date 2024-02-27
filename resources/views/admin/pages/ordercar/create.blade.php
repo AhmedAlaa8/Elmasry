@@ -125,13 +125,16 @@
     <script>
         $(document).on('change', '#exampleSelectBorder1', function(e) {
 
+
             let x = $(this).val();
 
             $.ajax({
                 url: '/admin/ordercar/ajaxcar' + x,
                 type: "GET",
                 success: function(res) {
+
                     $('#salary').val(res.salary)
+
                 }
             })
 
@@ -139,13 +142,13 @@
 
         $(document).on('change', '#exampleSelectBorder', function(e) {
             let x = $(this).val();
-
+            console.log(x);
             $.ajax({
 
                 url: '/admin/ordercar/ajaxcar1/' + x,
                 type: "GET",
                 success: function(res) {
-
+                    console.log(res);
                     $('#name').val(res.name)
                     $('#adress').val(res.adress)
                     $('#phone').val(res.phone)

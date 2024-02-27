@@ -28,6 +28,21 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('sit') }}/css/style.css" rel="stylesheet">
+
+    <style>
+        .center_elemint {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .co {
+            background-color: #f77d0a;
+            color: white;
+        }
+    </style>
+
 </head>
 
 <body>

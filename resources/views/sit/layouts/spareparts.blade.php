@@ -5,14 +5,14 @@
 
 <!-- Rent A Car Start -->
 <div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
+    <div class="container pt-5 pb-3 center_elemint">
         <h1 class="display-1 text-primary text-center">03</h1>
         <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
         @if (request()->route()->getName() == 'sitlogin.')
-            <a href="{{ route('sitlogin.shows') }}" style="margin-left: 40%" class="btn btn-info mb-4 py-2 px-5">Show
+            <a href="{{ route('sitlogin.shows') }}" style="" class="btn btn-primary mb-4 py-2 px-5">Show
                 spareparts</a>
         @else
-            <a href="{{ route('sit.loginPage') }}" style="margin-left: 40%" class="btn btn-info mb-4 py-2 px-5">login
+            <a href="{{ route('sit.loginPage') }}" style="" class="btn btn-primary mb-4 py-2 px-5">login
                 Now</a>
         @endif
         <div class="row">
@@ -45,7 +45,7 @@
                         <a class="btn btn-primary px-3"
                             href="{{ route('sitlogin.order', $spareparts[0]->id) }}">{{ $spareparts[0]->salary }}</a>
                     @else
-                        <a href="{{ route('sit.loginPage') }}" class="btn btn-info px-3">login
+                        <a href="{{ route('sit.loginPage') }}" class="btn btn-primary px-3">login
                             Now</a>
                     @endif
                 </div>
@@ -79,7 +79,7 @@
                         <a class="btn btn-primary px-3"
                             href="{{ route('sitlogin.order', $spareparts[1]->id) }}">{{ $spareparts[1]->salary }}</a>
                     @else
-                        <a href="{{ route('sit.loginPage') }}" class="btn btn-info px-3">login
+                        <a href="{{ route('sit.loginPage') }}" class="btn btn-primary px-3">login
                             Now</a>
                     @endif
                 </div>
@@ -113,23 +113,21 @@
                         <a class="btn btn-primary px-3"
                             href="{{ route('sitlogin.order', $spareparts[2]->id) }}">{{ $spareparts[2]->salary }}</a>
                     @else
-                        <a href="{{ route('sit.loginPage') }}" class="btn btn-info px-3">login
+                        <a href="{{ route('sit.loginPage') }}" class="btn btn-primary px-3">login
                             Now</a>
                     @endif
                 </div>
             </div>
 
-
-            @if (request()->route()->getName() == 'sitlogin.')
-                <a href="{{ route('sitlogin.shows') }}" style="margin-left: 40%"
-                    class="btn btn-info mt-2 py-2 px-5">Show
-                    spareparts</a>
-            @else
-                <a href="{{ route('sit.loginPage') }}" style="margin-left: 40%"
-                    class="btn btn-info mt-2 py-2 px-5">login
-                    Now</a>
-            @endif
         </div>
+        @if (request()->route()->getName() == 'sitlogin.')
+            <a href="{{ route('sitlogin.shows') }}" style="" class="btn btn-primary mt-2 py-2 px-5">Show
+                spareparts</a>
+        @else
+            <a href="{{ route('sit.loginPage') }}" style="" class="btn btn-primary mt-2 py-2 px-5">login
+                Now</a>
+        @endif
+
     </div>
 </div>
 <!-- Rent A Car End -->
